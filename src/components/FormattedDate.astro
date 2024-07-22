@@ -1,0 +1,42 @@
+---
+interface Props {
+	date: Date;
+}
+
+const { date } = Astro.props;
+
+const months = [
+  "января", "февраля", "марта",
+  "апреля", "мая", "июня",
+  "июля", "августа", "сентября",
+  "октября", "ноября", "декабря"
+];
+---
+
+<!-- <time datetime={date.toISOString()}>
+	{
+		date.toLocaleDateString('en-us', {
+			year: 'numeric',
+			month: 'short',
+			day: 'numeric',
+		})
+	}
+</time> -->
+
+<!-- <time datetime={date.toISOString()}>
+	{
+		date.toLocaleDateString('ru', {
+			year: 'numeric',
+			month: '2-digit',
+			day: '2-digit',
+		})
+	}
+</time> -->
+
+
+
+<time datetime={date.toISOString()}>
+  {
+    `${date.getDate()} ${months[date.getMonth()]} ${date.getFullYear()}`
+  }
+</time>

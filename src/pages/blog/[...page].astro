@@ -1,6 +1,8 @@
 ---
-import { type CollectionEntry, getCollection } from "astro:content";
+import { getCollection } from "astro:content";
+import BaseLayout from "../../layouts/BaseLayout.astro";
 import BlogPost from "../../layouts/BlogPost.astro";
+import { Fragment } from "astro/jsx-runtime";
 
 export async function getStaticPaths({ paginate }) {
   // const posts = await getCollection("blog");
@@ -11,25 +13,28 @@ export async function getStaticPaths({ paginate }) {
   });
 }
 
+
+
 const { page } = Astro.props;
 
 // console.log(page.url);
 ---
 
-<h1>Page {page.currentPage}</h1>
-{
-  page.data.map((post) => (
-    <BlogPost 
-      title={post.frontmatter.title}
-      pubDate='Jul 22 2024'
-    />
+<BaseLayout>
+  <!-- {allPosts.map((post) => <li>{post.frontmatter.title}</li>)}
+  {allPosts.map((post) => {
+    const Content = post.Content;
+    return <Content />;
+  })} -->
 
-    // <>
-    //   <h1>{post.frontmatter.title}</h1>
-    //   <a href={post.url}>{post.url}</a>
-    // </>
-  ))
-}
-<br />
-{page.url.prev ? <a href={page.url.prev}>Previous</a> : null}
-{page.url.next ? <a href={page.url.next}>Next</a> : null}
+  <h1>Page {page.currentPage}</h1>
+  {
+    page.data.map((post) => (
+      <BlogPost title={post.frontmatter.title} pubDate="Jul 22 2024" />
+    ))
+  }
+
+  <br />
+  {page.url.prev ? <a href={page.url.prev}>Previous</a> : null}
+  {page.url.next ? <a href={page.url.next}>Next</a> : null}
+</BaseLayout>

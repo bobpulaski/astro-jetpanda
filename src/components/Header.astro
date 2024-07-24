@@ -1,17 +1,18 @@
 ---
-import HeaderLink from './HeaderLink.astro';
-import { SITE_TITLE } from '../consts';
+import HeaderLink from "./HeaderLink.astro";
+import "../styles/header.css";
+
+import { SITE_TITLE } from "../consts";
 ---
 
 <header>
-	<nav>
-		<h2><a href="/">{SITE_TITLE}</a></h2>
-		<div class="internal-links">
-			<HeaderLink href="/">Home</HeaderLink>
-			<HeaderLink href="/blog">Blog</HeaderLink>
-			<HeaderLink href="/about">About</HeaderLink>
-		</div>
-		<div class="social-links">
+  <nav class="nav-links">
+    <ul>
+      <li><HeaderLink href="/">Home</HeaderLink></li>
+      <li><HeaderLink href="/blog">Blog</HeaderLink></li>
+      <li><HeaderLink href="/about">About</HeaderLink></li>
+    </ul>
+    <!-- <div class="social-links">
 			<a href="https://m.webtoo.ls/@astro" target="_blank">
 				<span class="sr-only">Follow Astro on Mastodon</span>
 				<svg viewBox="0 0 16 16" aria-hidden="true" width="32" height="32"
@@ -39,10 +40,10 @@ import { SITE_TITLE } from '../consts';
 					></path></svg
 				>
 			</a>
-		</div>
-	</nav>
+		</div> -->
+  </nav>
 </header>
-<style>
+<!-- <style>
 	header {
 		margin: 0;
 		padding: 0 1em;
@@ -82,4 +83,4 @@ import { SITE_TITLE } from '../consts';
 			display: none;
 		}
 	}
-</style>
+</style> -->

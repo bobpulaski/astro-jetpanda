@@ -5,15 +5,15 @@ interface Props {
 
 const { date } = Astro.props;
 
-const months = [
-  "января", "февраля", "марта",
-  "апреля", "мая", "июня",
-  "июля", "августа", "сентября",
-  "октября", "ноября", "декабря"
-];
+// const months = [
+//   "января", "февраля", "марта",
+//   "апреля", "мая", "июня",
+//   "июля", "августа", "сентября",
+//   "октября", "ноября", "декабря"
+// ];
 ---
 
-<!-- <time datetime={date.toISOString()}>
+<time datetime={date.toISOString()}>
 	{
 		date.toLocaleDateString('en-us', {
 			year: 'numeric',
@@ -21,7 +21,7 @@ const months = [
 			day: 'numeric',
 		})
 	}
-</time> -->
+</time>
 
 <!-- <time datetime={date.toISOString()}>
 	{
@@ -35,8 +35,8 @@ const months = [
 
 
 
-<time datetime={date.toISOString()}>
+<!-- <time datetime={date.toISOString()}>
   {
     `${date.getDate()} ${months[date.getMonth()]} ${date.getFullYear()}`
   }
-</time>
+</time> -->

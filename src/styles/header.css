@@ -1,0 +1,15 @@
+.nav-links ul {
+  list-style-type: none;
+  padding: 0;
+  display: flex;
+}
+
+.nav-links li {
+  list-style: none;
+  margin-right: 10px; /* Добавляет промежуток между элементами */
+}
+
+.nav-links a {
+  text-transform: uppercase;
+  color: #6b6b6b;
+}

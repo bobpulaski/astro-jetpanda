@@ -1,15 +1,39 @@
-.nav-links ul {
+header {
+  margin: 0;
+  padding: 0 1em;
+  background: white;
+  box-shadow: 0 2px 8px rgba(var(--black), 5%);
+}
+
+nav {
+  display: flex;
+  justify-content: center; /* Горизонтальное центрирование */
+  align-items: center; /* Вертикальное выравнивание */
+}
+
+ul {
   list-style-type: none;
   padding: 0;
   display: flex;
 }
 
-.nav-links li {
+li {
   list-style: none;
   margin-right: 10px; /* Добавляет промежуток между элементами */
 }
 
-.nav-links a {
+a {
   text-transform: uppercase;
   color: #6b6b6b;
+
+  padding: 1em 0.5em;
+  color: var(--black);
+  border-bottom: 4px solid transparent;
+  text-decoration: none;
+}
+
+a.active {
+  text-decoration: none;
+  border-bottom-color: var(--accent);
+  font-weight: bolder;
 }

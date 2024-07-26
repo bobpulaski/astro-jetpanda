@@ -1,7 +1,7 @@
 ---
 title: 'Using MDX'
 description: 'Lorem ipsum dolor sit amet'
-pubDate: '2022-07-01'
+pubDate: '1025-06-06'
 heroImage: '/blog-placeholder-5.jpg'
 ---
 

@@ -1,14 +1,13 @@
 ---
-import { getCollection } from "astro:content";
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import BlogPost from "../../layouts/PreviewBlogPostLayout.astro";
-
 import Pagination from "@philnash/astro-pagination";
 
 export async function getStaticPaths({ paginate }) {
-  // const posts = await getCollection("blog");
+  const posts = (await Astro.glob("./*/*.md*")
+  );
 
-  const posts = await Astro.glob("./*/*.md*");
+   posts.sort((a, b) => new Date(b.frontmatter.pubDate) - new Date(a.frontmatter.pubDate));
 
   return paginate(posts, {
     pageSize: 2,

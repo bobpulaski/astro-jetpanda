@@ -1,4 +1,6 @@
 header {
+  display: flex;
+  justify-content: center;
   margin: 0;
   padding: 0 1em;
   background: white;
@@ -7,8 +9,8 @@ header {
 
 nav {
   display: flex;
-  justify-content: right; /* Горизонтальное центрирование */
-  align-items: center; /* Вертикальное выравнивание */
+  justify-content: space-between;
+  align-items: center;
 }
 
 ul {
@@ -23,7 +25,7 @@ li {
 }
 
 a {
-  text-transform: uppercase;
+  text-transform: none;
   color: #6b6b6b;
 
   padding: 1em 0.5em;
@@ -36,4 +38,10 @@ a.active {
   text-decoration: none;
   border-bottom-color: var(--accent);
   font-weight: bolder;
+}
+
+.logo {
+  font-weight: bold;
+  font-size: 22px;
+  color: var(--accent);
 }

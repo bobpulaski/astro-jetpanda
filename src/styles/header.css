@@ -7,7 +7,7 @@ header {
 
 nav {
   display: flex;
-  justify-content: center; /* Горизонтальное центрирование */
+  justify-content: right; /* Горизонтальное центрирование */
   align-items: center; /* Вертикальное выравнивание */
 }
 

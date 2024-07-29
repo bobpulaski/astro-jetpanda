@@ -1,5 +1,6 @@
 ---
 import HeaderLink from "./HeaderLink.astro";
+import ThemeIcon from "./ThemeIcon.astro";
 import "../styles/header.css";
 
 import { SITE_TITLE } from "../consts";
@@ -8,13 +9,15 @@ import { SITE_TITLE } from "../consts";
 <header>
   <div style="width: 1280px">
     <nav>
-      <div class="logo">JET PANDA</div>
+      <div class="logo"><a href="/">JET PANDA</a></div>
+
       <ul>
         <li><HeaderLink href="/">Home</HeaderLink></li>
         <li><HeaderLink href="/blog">Blog</HeaderLink></li>
         <li><HeaderLink href="/about">About</HeaderLink></li>
+        <li><HeaderLink href="/tags">Tags</HeaderLink></li>
       </ul>
-      <div>2</div>
+      <div><ThemeIcon /></div>
     </nav>
   </div>
 </header>

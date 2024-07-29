@@ -11,4 +11,10 @@ const myImage = frontmatter.heroImage;
   <h3>{frontmatter.pubDate}</h3>
   <Picture src={myImage} width={800} height={350}  alt="3" />
   <slot />
+
+  <div class="tags">
+    {frontmatter.tags.map((tag) => (
+      <p class="tag"><a href={`/tags/${tag}`}>{tag}</a></p>
+    ))}
+  </div>
 </BaseLayout>

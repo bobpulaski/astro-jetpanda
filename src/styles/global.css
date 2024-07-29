@@ -31,6 +31,15 @@ main {
 	padding: 3em 1em;
 }
 
+html.dark {
+  background-color: #0d0950;
+  color: #fff;
+}
+
+.dark .nav-links a {
+  color: #fff;
+}
+
 picture > img 
 {
 	width: 100%;

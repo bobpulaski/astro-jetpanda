@@ -15,6 +15,7 @@
     "@astrojs/sitemap": "^3.1.6",
     "@philnash/astro-pagination": "^0.4.0",
     "astro": "^4.12.2",
+    "marked": "^13.0.3",
     "sharp": "^0.33.4"
   }
 }

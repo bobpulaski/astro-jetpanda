@@ -1,0 +1,24 @@
+---
+import fetchApi from "../../lib/strapi";
+import type Article from "../../interfaces/article";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+
+const articles = await fetchApi<Article[]>({
+  endpoint: "csharps",
+  wrappedByKey: "data",
+});
+
+console.log(articles);
+---
+
+<BaseLayout>
+  {
+    articles.map((article) => (
+      <li>
+        <a href={`/strapi/posts/${article.attributes.slug}`}>
+          <h1>{article.attributes.title}</h1>
+        </a>
+      </li>
+    ))
+  }
+</BaseLayout>

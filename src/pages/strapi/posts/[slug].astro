@@ -1,0 +1,27 @@
+---
+import fetchApi from "../../../lib/strapi";
+import type Article from "../../../interfaces/article";
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+import BlogPost from "../../../layouts/BlogPostLayout.astro";
+import MarkdownComponent from "../../../components/MarkdownComponent.astro";
+
+export async function getStaticPaths() {
+  const articles = await fetchApi<Article[]>({
+    endpoint: "csharps",
+    wrappedByKey: "data",
+  });
+
+  return articles.map((article) => ({
+    params: { slug: article.attributes.slug },
+    props: article,
+  }));
+}
+type Props = Article;
+
+const article = Astro.props;
+---
+
+<BaseLayout>
+  <h1>{article.attributes.title}</h1>
+  <MarkdownComponent content={article.attributes.content} />
+</BaseLayout>
